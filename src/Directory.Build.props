@@ -1,0 +1,17 @@
+<Project>
+    <Target Name="GetNpmPackageFileMetadata" BeforeTargets="BeforeBuild">
+      <ItemGroup>
+          <NpmPackageFile>
+              <StampFile>$([System.IO.Path]::Combine(`%(RootDir)%(Directory)`, 'node_modules', '.install-stamp'))</StampFile>
+              <WorkingDirectory>%(RootDir)%(Directory)</WorkingDirectory>
+              <Command Condition="'$(RestorePackagesWithLockFile)' != 'true'">npm install</Command>
+              <Command Condition="'$(RestorePackagesWithLockFile)' == 'true'">npm ci</Command>
+          </NpmPackageFile>
+      </ItemGroup>
+  </Target>
+
+  <Target Name="NpmInstall" DependsOnTargets="GetNpmPackageFileMetadata" Inputs="@(NpmPackageFile)" Outputs="%(NpmPackageFile.StampFile)" BeforeTargets="BeforeBuild">
+      <Exec Command="@(NpmPackageFile->'%(Command)')" WorkingDirectory="%(WorkingDirectory)" />
+      <Touch Files="@(NpmPackageFile->'%(StampFile)')" AlwaysCreate="true" />
+  </Target>
+</Project>
