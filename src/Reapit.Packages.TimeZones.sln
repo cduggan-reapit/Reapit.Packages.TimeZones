@@ -27,6 +27,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Github Workflows", "Github 
 		..\.github\workflows\release-and-publish.yml = ..\.github\workflows\release-and-publish.yml
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{A1D5CB60-CF1E-4244-90B2-8DCB0AB175F6}"
+	ProjectSection(SolutionItems) = preProject
+		..\docs\changelog.md = ..\docs\changelog.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,5 +52,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{50BABD74-9E2E-48CA-A069-30E5150D1831} = {AA48036A-FCF3-4777-9D7B-640BBAA5A083}
+		{A1D5CB60-CF1E-4244-90B2-8DCB0AB175F6} = {AA48036A-FCF3-4777-9D7B-640BBAA5A083}
 	EndGlobalSection
 EndGlobal
