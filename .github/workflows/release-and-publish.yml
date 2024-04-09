@@ -7,6 +7,7 @@ on:
 
 env: 
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GH_PACKAGE_FEED: https://nuget.pkg.github.com/cduggan-reapit/index.json
   VERSION_CREATED: '0.0.0'
   HUSKY: 0
 jobs:
@@ -39,7 +40,10 @@ jobs:
       - name: create release
         run: npx semantic-release
 
-      - name: print stuff
+      - name: publish to nuget feed
         # don't run this if we've not created a new version
-        if: ${{ env.VERSION_CREATED != '0.0.0' }}
-        run: echo ${{ env.VERSION_CREATED }}
+        # if: ${{ env.VERSION_CREATED != '0.0.0' }}
+        run: |
+          copy ./README.md ./src/Reapit.Packages/TimeZones/README.md
+          dotnet pack ./src/Reapit.Packages.TimeZones/Reapit.Packages.TimeZones.csproj -o ./package/ -c Release
+          dotnet nuget push ./package/*.nupkg --source ${GH_PACKAGE_FEED} --api-key ${{ secrets.GH_NUGET_WRITE_TOKEN }} --skip-duplicate --no-symbols
