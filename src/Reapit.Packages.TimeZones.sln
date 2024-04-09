@@ -7,6 +7,26 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reapit.Packages.TimeZones",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reapit.Packages.TimeZones.UnitTests", "Reapit.Packages.TimeZones.UnitTests\Reapit.Packages.TimeZones.UnitTests.csproj", "{D4437D27-C6DF-48BD-91D7-019A2DA1266E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AA48036A-FCF3-4777-9D7B-640BBAA5A083}"
+	ProjectSection(SolutionItems) = preProject
+		..\.commitlintrc.yml = ..\.commitlintrc.yml
+		..\.gitattributes = ..\.gitattributes
+		..\.gitignore = ..\.gitignore
+		..\.releaserc.yml = ..\.releaserc.yml
+		..\LICENSE = ..\LICENSE
+		..\nuget.config = ..\nuget.config
+		..\package.json = ..\package.json
+		..\package-lock.json = ..\package-lock.json
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Github Workflows", "Github Workflows", "{50BABD74-9E2E-48CA-A069-30E5150D1831}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows\build-and-test.yml = ..\.github\workflows\build-and-test.yml
+		..\.github\workflows\commit-linting.yml = ..\.github\workflows\commit-linting.yml
+		..\.github\workflows\release-and-publish.yml = ..\.github\workflows\release-and-publish.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +44,8 @@ Global
 		{D4437D27-C6DF-48BD-91D7-019A2DA1266E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4437D27-C6DF-48BD-91D7-019A2DA1266E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4437D27-C6DF-48BD-91D7-019A2DA1266E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{50BABD74-9E2E-48CA-A069-30E5150D1831} = {AA48036A-FCF3-4777-9D7B-640BBAA5A083}
 	EndGlobalSection
 EndGlobal

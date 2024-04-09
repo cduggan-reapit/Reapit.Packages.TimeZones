@@ -8,6 +8,7 @@ on:
 env: 
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   VERSION_CREATED: '0.0.0'
+  HUSKY: 0
 jobs:
   release:
     name: Release and Publish
