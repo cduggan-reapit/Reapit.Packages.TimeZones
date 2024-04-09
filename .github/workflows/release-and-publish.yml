@@ -44,6 +44,6 @@ jobs:
         # don't run this if we've not created a new version
         # if: ${{ env.VERSION_CREATED != '0.0.0' }}
         run: |
-          cp ./README.md ./src/Reapit.Packages/TimeZones/README.md
+          cp ./README.md ./src/Reapit.Packages.TimeZones/README.md
           dotnet pack ./src/Reapit.Packages.TimeZones/Reapit.Packages.TimeZones.csproj -o ./package/ -c Release
           dotnet nuget push ./package/*.nupkg --source ${GH_PACKAGE_FEED} --api-key ${{ secrets.GH_NUGET_WRITE_TOKEN }} --skip-duplicate --no-symbols
