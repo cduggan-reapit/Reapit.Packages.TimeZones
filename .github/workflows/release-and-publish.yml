@@ -45,4 +45,4 @@ jobs:
         # if: ${{ env.VERSION_CREATED != '0.0.0' }}
         run: |
           dotnet pack ./src/Reapit.Packages.TimeZones/Reapit.Packages.TimeZones.csproj -o ./package/ -c Release
-          dotnet nuget push ./package/*.nupkg --source ${GH_PACKAGE_FEED} --api-key ${GITHUB_TOKEN} --skip-duplicate --no-symbols --store-password-in-clear-text
+          dotnet nuget push ./package/*.nupkg --source ${GH_PACKAGE_FEED} --api-key ${GITHUB_TOKEN} --skip-duplicate --no-symbols
