@@ -1,5 +1,4 @@
-﻿using FluentAssertions;
-using Reapit.Packages.TimeZones.Configuration;
+﻿using Reapit.Packages.TimeZones.Configuration;
 
 namespace Reapit.Packages.TimeZones.UnitTests.Configuration;
 
