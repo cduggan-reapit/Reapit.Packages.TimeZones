@@ -1,5 +1,4 @@
 ﻿using System.Runtime.Serialization;
-using FluentAssertions;
 using Reapit.Packages.TimeZones.Configuration;
 using Reapit.Packages.TimeZones.Services;
 using Reapit.Packages.TimeZones.UnitTests.Configuration;
