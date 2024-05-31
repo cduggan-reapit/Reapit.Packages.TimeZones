@@ -18,7 +18,7 @@ public class MyClass
     private readonly IDateTimeConverterService _dateTimeConverterService;
 
     public MyClass(IDateTimeConverterService dateTimeConverterService)
-        => _dateTimeConverterService = dateTimeConverterService
+        => _dateTimeConverterService = dateTimeConverterService;
         
     public DateTime GetNowInAustralianTime()
         => _dateTimeConverterService.ToLocalTime(DateTime.UtcNow, "AEST");
